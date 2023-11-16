@@ -1,11 +1,7 @@
-
 What additional things have you done in that subject outside of learning and scoring good marks in that subject?
 Here are some important points to keep in mind while writing Java program
-
-1.Always comment on your code: You never know who's gonna check your paper. You can never know if he completely understands your method of problem solving. Make sure your comments explain what's going on in your code.
-2.Follow naming conventions: Be sure to follow the naming conventions. Class name starts with a capital letter and method name with small. Though, just a convention, some teachers take it very seriously.
-3.Name your variables appropriately: Suppose you are storing the calculated percentage of a student in a variable. You can name your variable “perc” or even “percentage” (small caps). It's not just good for writing in exams but a good programming practice.
-4.Efficient algorithm: Certain problems can be solved in a single line of code or maybe in cases dozens of lines. Be sure to use the most efficient algorithm.
-5.Java is an OOP language, don't make your code procedure oriented: This is where many make the mistake. Make sure your code just doesn't contain a class with a method which takes up the problem and solves it as if it were a single procedure like you would in a language like C. But be sure to attempt the problem from an Object Oriented perspective and use classes wherever necessary.
-6.Only import necessary classes: Say you want to import a class java.io.Exceptions. You can either use import java.io.* to import all classes in java Resources and Information. or you can use import java.io.Exceptions to only import the Exceptions. The latter is better. Importing all classes from a package makes your code look mediocre.
-7.Indent your code: Most students don't even know what code indentation is and indenting your code will not only make your code simple to understand but will definitely give you an edge over others.
+Always comment on code: never know who's gonna check your paper. You can never know if he completely understands your method of problem solving. Make sure your comments explain what's going on in your code.
+Follow naming conventions: Be sure to follow the naming conventions. Class name starts with a capital letter and method name with small. Though, just a convention, some teachers take it very seriously.
+Name your variables appropriately: Suppose you are storing the calculated percentage of a student in a variable. You can name your variable “perc” or even “percentage” (small caps). It's not just good for writing in exams but a good programming practice.
+Efficient algorithm: Certain problems can be solved in a single line of code or maybe in cases dozens of lines. Be sure to use the most efficient algorithm.
+Java is an OOP language, don't make your code procedure oriented: This is where many make the mistake. Make sure your code just doesn't contain a class with a method which takes up the problem and solves it as if it were a single procedure like you would in a language like C. But be sure to attempt the problem from an Object Oriented perspective and use classes wherever necessary.
