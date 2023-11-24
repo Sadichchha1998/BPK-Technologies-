@@ -1,0 +1,47 @@
+Since the job requires excellent database knowledge and algorithm skill, please complete the following task.
+• For a school, I would like to store the marks for all the students of grade 1 to 8 for all the subjects they study.
+o Design a table structure to store the student marks in all subjects
+o Design a screen to add new student details (f.name, l.name, dob, parent's name, address, city, phone#) and show the list of students with these data in a table as and when it is created.
+o Generate a report that will show all the students who have scored more than 60%
+
+Students Table:
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DOB DATE,
+    ParentName VARCHAR(100),
+    Address VARCHAR(255),
+    City VARCHAR(50),
+    PhoneNumber VARCHAR(15)
+);
+
+Subjects Table:
+CREATE TABLE Subjects (
+    SubjectID INT PRIMARY KEY,
+    SubjectName VARCHAR(50)
+);
+
+StudentMarks Table:
+CREATE TABLE StudentMarks (
+    RecordID INT PRIMARY KEY,
+    StudentID INT,
+    SubjectID INT,
+    Marks INT,
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+    FOREIGN KEY (SubjectID) REFERENCES Subjects(SubjectID)
+);
+
+Now, when you want to add new student details, you would insert data into the Students table. To add marks for each student in a subject, you would insert data into the StudentMarks table.
+
+For the reporting requirement:
+
+SELECT Students.StudentID, Students.FirstName, Students.LastName
+FROM Students
+JOIN StudentMarks ON Students.StudentID = StudentMarks.StudentID
+JOIN Subjects ON StudentMarks.SubjectID = Subjects.SubjectID
+GROUP BY Students.StudentID, Students.FirstName, Students.LastName
+HAVING AVG(Marks) > 60;
+
+This query retrieves the students who have an average mark greater than 60% across all subjects.
+

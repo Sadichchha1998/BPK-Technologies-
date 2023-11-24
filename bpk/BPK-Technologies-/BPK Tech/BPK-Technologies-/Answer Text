@@ -1,0 +1,68 @@
+First created table store student marks
+
+
+CREATE TABLE StudentMarks (
+    StudentID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DateOfBirth DATE,
+    ParentsName VARCHAR(100),
+    Address VARCHAR(255),
+    City VARCHAR(50),
+    PhoneNumber VARCHAR(15)
+);
+
+2. create table for subject
+
+CREATE TABLE Subject (
+    SubjectID INT PRIMARY KEY,
+    SubjectName VARCHAR(50)
+);
+
+create table for marks
+
+CREATE TABLE Marks (
+    MarkID INT PRIMARY KEY,
+    StudentID INT,
+    SubjectID INT,
+    Score DECIMAL(5, 2),
+    FOREIGN KEY (StudentID) REFERENCES StudentMarks(StudentID),
+    FOREIGN KEY (SubjectID) REFERENCES Subject(SubjectID)
+);
+
+-- Insert some example subjects
+INSERT INTO Subject (SubjectID, SubjectName)
+VALUES
+    (1, 'Mathematics'),
+    (2, 'Science'),
+    (3, 'English'),
+    -- Add more subjects if required
+
+-- Now add new student details
+
+INSERT INTO StudentMarks (StudentID, FirstName, LastName, DateOfBirth, ParentsName, Address, City, PhoneNumber)
+VALUES
+    (1, 'Sadichchha', 'Naik', '2005-05-15', 'Savala ', 'bardi123', 'solapur', '12346788990'),
+   
+    -- Add more students if required
+
+-- Add sample marks for students
+INSERT INTO Marks (MarkID, StudentID, SubjectID, Score)
+VALUES
+    (1, 1, 1, 75),
+    (2, 1, 2, 80),
+    
+    -- Add more marks as needed
+
+-- Generate a report of students scoring more than 60%
+SELECT
+    SM.FirstName,
+    SM.LastName,
+    S.SubjectName,
+    M.Score
+FROM
+    StudentMarks SM
+JOIN Marks M ON SM.StudentID = M.StudentID
+JOIN Subject S ON M.SubjectID = S.SubjectID
+WHERE
+    M.Score > 60;
